@@ -10,7 +10,7 @@ declare module "next-auth" {
     status: status;
     expires: string;
     user: {
-      emai: string;
+      email: string;
       image: string;
       name: string;
     };

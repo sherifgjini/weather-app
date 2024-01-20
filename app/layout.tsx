@@ -1,6 +1,7 @@
 import StoreProvider from "@/redux/provider";
 import "../index.scss";
 import GetGeoLocation from "@/components/getGeoLocation";
+import Header from "@/components/header";
 
 export default function RootLayout({
   children,
@@ -12,6 +13,7 @@ export default function RootLayout({
       <body>
         <StoreProvider>
           <GetGeoLocation />
+          <Header />
           {children}
         </StoreProvider>
       </body>

@@ -1,12 +1,14 @@
-html, body {
-    padding:0;
-    margin:0;
+html,
+body,
+p {
+  padding: 0;
+  margin: 0;
 }
 body {
-    background: #080927;
-    color:#fff;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;
+  background: #080927;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
 }
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }

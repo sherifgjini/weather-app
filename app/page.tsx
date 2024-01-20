@@ -1,6 +1,7 @@
 "use client";
+import WeatherBox from "@/components/weatherBox/weatherBox";
 import GetGeoLocation from "../components/getGeoLocation";
-import Login from "./logIn";
+import Login from "../components/header/signin";
 import UserName from "./username";
 
 // export const metadata = {
@@ -26,9 +27,7 @@ export default function Page() {
   console.log(weatherData);
   return (
     <div>
-      <img src={`${process.env.NEXT_PUBLIC_API_ICON_URL}/04n@4x.png`} alt="" />
-      <Login />
-      <UserName />
+      <WeatherBox />
     </div>
   );
 }

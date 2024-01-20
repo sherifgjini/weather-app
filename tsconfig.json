@@ -17,7 +17,10 @@
     "baseUrl": ".",
     "paths": {
       "@/components/*": ["components/*"],
+      "@/interfaces/*": ["interfaces/*"],
+      "@/services/*": ["services/*"],
       "@/redux/*": ["redux/*"],
+      "@/public/*": ["public/*"],
       "@/styles/*": ["styles/*"]
     },
     "plugins": [

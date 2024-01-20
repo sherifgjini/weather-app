@@ -1,7 +1,19 @@
 .header {
-    width:100%;
+  width: 100%;
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  .user {
     display: flex;
-    padding:20px;
-    box-shadow: 0 0 6px -1 rgba(0,0,0,0.4);
-    
+    align-items: center;
+    gap: 10px;
+
+    .avatar {
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border: 2px solid #fff;
+      border-radius: 100%;
+    }
+  }
 }
