@@ -1,4 +1,4 @@
-name: CI/CD for React
+name: CI/CD Run tests on pull request
 
 on:
   pull_request:
