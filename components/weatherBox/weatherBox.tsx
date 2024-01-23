@@ -8,7 +8,6 @@ import { useAppSelector } from "@/redux/store";
 
 const WeatherBox = () => {
   const { value } = useAppSelector((state) => state.weather);
-
   return (
     <div className={`${Styles.weatherbox} glass`}>
       <span className="blur" />
