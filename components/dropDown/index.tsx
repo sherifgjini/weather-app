@@ -1,5 +1,5 @@
 import React, { useState, ReactNode } from "react";
-import styles from "./Dropdown.module.scss";
+import styles from "./dropdown.module.scss";
 
 interface DropdownProps {
   children: ReactNode;
