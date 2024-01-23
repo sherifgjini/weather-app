@@ -1,5 +1,5 @@
 "use client";
-import { getCoords } from "@/redux/features/geoLocSlice";
+import { setCoords } from "@/redux/features/geoLocSlice";
 import { AppDispatch } from "@/redux/store";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -10,7 +10,7 @@ const GetGeoLocation = () => {
     if (navigator && navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((pos: GeolocationPosition) =>
         dispatch(
-          getCoords({
+          setCoords({
             latitude: pos.coords.latitude,
             longitude: pos.coords.longitude,
           })

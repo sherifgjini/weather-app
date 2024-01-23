@@ -1,3 +1,4 @@
+"use client";
 import React, {
   useState,
   useEffect,
@@ -7,14 +8,17 @@ import React, {
 } from "react";
 import Input from "@/components/input/index";
 import Styles from "./search.module.scss";
-import Link from "next/link";
 import { getGeoLocation } from "@/services/getGeoLocation.service";
 import { IGeoLocation } from "@/interfaces/IGeoLocation";
-import Autocomplete from "./autocomplete";
+import dynamic from "next/dynamic";
+const Autocomplete = dynamic(() => import("./autocomplete"));
+const Cities = dynamic(() => import("./cities"));
 
 const Search: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [autocompleteData, setAutocompleteData] = useState<IGeoLocation[]>([]);
+  const [autocompleteData, setAutocompleteData] = useState<IGeoLocation[]>(
+    [] as IGeoLocation[]
+  );
   const [loading, setLoading] = useState<boolean>(false);
 
   const fetchData = useCallback(async () => {
@@ -50,15 +54,14 @@ const Search: React.FC = () => {
         onChange={handleInputChange}
         data-testid="input-search"
       />
-      <div data-testid="cities" className={Styles.cities}>
-        <Link data-testid="city-link" href={"/city/Berlin"}>
-          Berlin
-        </Link>{" "}
-        <Link data-testid="city-link" href={"/city/Berlin"}>
-          Berlin
-        </Link>
-      </div>
-      <Autocomplete loading={loading} data={autocompleteData} />
+      <Cities />
+      {searchTerm ? (
+        <Autocomplete
+          loading={loading}
+          data={autocompleteData}
+          setAutocompleteData={setAutocompleteData}
+        />
+      ) : null}
     </div>
   );
 };

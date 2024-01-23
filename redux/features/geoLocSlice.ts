@@ -7,21 +7,21 @@ type InitialStateType = {
 };
 
 const initialState: InitialStateType = {
-  value: {
-    latitude: 0,
-    longitude: 0,
-  },
+  value: null,
 };
 
 export const geoLocationSlice = createSlice({
-  name: "getGeoLocation",
+  name: "geoLocation",
   initialState,
   reducers: {
-    getCoords: (state, action: PayloadAction<Coords>) => {
+    setCoords: (
+      state,
+      action: PayloadAction<NonNullable<InitialStateType["value"]>>
+    ) => {
       state.value = action.payload;
     },
   },
 });
 
-export const { getCoords } = geoLocationSlice.actions;
+export const { setCoords } = geoLocationSlice.actions;
 export default geoLocationSlice.reducer;

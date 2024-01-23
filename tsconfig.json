@@ -20,6 +20,7 @@
       "@/interfaces/*": ["interfaces/*"],
       "@/services/*": ["services/*"],
       "@/redux/*": ["redux/*"],
+      "@/utils/*": ["utils/*"],
       "@/public/*": ["public/*"],
       "@/styles/*": ["styles/*"]
     },

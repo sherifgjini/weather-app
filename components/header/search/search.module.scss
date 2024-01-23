@@ -2,6 +2,24 @@
   max-width: 350px;
   width: 100%;
   position: relative;
+  input {
+    width: 100%;
+    height: 40px;
+    color: #fff;
+    border-radius: 40px;
+    padding: 15px;
+    outline: 1px solid rgba(255, 255, 255, 0.3);
+    transition: outline 0.4s ease;
+    &:hover {
+      outline: 1px solid #fff;
+    }
+    &:focus {
+      outline: 2px solid #fff;
+    }
+    &::placeholder {
+      color: #fff;
+    }
+  }
   .cities {
     display: flex;
     width: 100%;
@@ -17,6 +35,7 @@
 
   .autocomplete {
     background: #fff;
+    z-index: 10;
     color: #000;
     border-radius: 12px;
     position: absolute;

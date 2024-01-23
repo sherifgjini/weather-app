@@ -1,37 +1,29 @@
-import SunsetIcon from "@/public/icons/SunSet";
-import SunriseIcon from "@/public/icons/SunRise";
+"use client";
+import Styles from "./weatherBox.module.scss";
+import SunInfo from "./sunInfo";
+import MainInfo from "./mainInfo";
+import TempInfo from "./tempInfo";
+import CityInfo from "./cityInfo";
+import { useAppSelector } from "@/redux/store";
 
 const WeatherBox = () => {
+  const { value } = useAppSelector((state) => state.weather);
+
   return (
-    <div>
-      <div>
-        <p>Suterday, 20 January, 15:00</p>
-        <h1>Munich, DE</h1>
+    <div className={`${Styles.weatherbox} glass`}>
+      <span className="blur" />
+      <CityInfo
+        city={value.name}
+        country={value.sys?.country}
+        icon={value.weather[0].icon}
+        dt={value.dt}
+        timezone={value.timezone}
+      />
+      <div className={Styles.tempInfo}>
+        <TempInfo main={value.main} weather={value.weather} />
+        <MainInfo {...value.main} />
       </div>
-      <div>
-        <div>
-          <img
-            src={`${process.env.NEXT_PUBLIC_API_ICON_URL}/04n@4x.png`}
-            alt="weathericon"
-          />
-          <p>30°C</p>
-        </div>
-        <ul>
-          <li>Real feel: 30</li>
-          <li>Real feel: 30</li>
-          <li>Real feel: 30</li>
-        </ul>
-      </div>
-      <div>
-        <p>
-          <SunsetIcon />
-          Sunset: 19:00{" "}
-        </p>
-        <p>
-          <SunriseIcon />
-          sunrise: 19:00{" "}
-        </p>
-      </div>
+      <SunInfo {...value.sys} />
     </div>
   );
 };
