@@ -25,6 +25,7 @@ export default async function Page({ params }: Params) {
   });
   return (
     <div>
+      <h1 data-testid="h1">test</h1>
       <Suspense
         fallback={<span className="weatherBoxSkeleton">Loading...</span>}
       >

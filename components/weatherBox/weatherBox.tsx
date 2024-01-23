@@ -8,14 +8,13 @@ import { useAppSelector } from "@/redux/store";
 
 const WeatherBox = () => {
   const { value } = useAppSelector((state) => state.weather);
-
+  //we can pass data either by drilling value across components or from redux using useSelector()
   return (
-    <div className={`${Styles.weatherbox} glass`}>
-      <span className="blur" />
+    <div className={`${Styles.weatherbox} glass`} data-testid="weather-box">
       <CityInfo
         city={value.name}
         country={value.sys?.country}
-        icon={value.weather[0].icon}
+        icon={value.weather?.[0]?.icon ?? ""}
         dt={value.dt}
         timezone={value.timezone}
       />

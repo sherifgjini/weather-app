@@ -7,14 +7,18 @@ interface ITempInfoProps {
 }
 
 const TempInfo: React.FC<ITempInfoProps> = ({ main, weather }) => {
-  const { description, main: title } = weather[0];
+  const { description, main: title } = weather?.[0] ?? {
+    description: "",
+    main: "",
+  };
+
   return (
     <div>
       <p>
-        <b>{main.temp}°C</b>
+        <b data-testid="main-temp">{main?.temp}°C</b>
       </p>
       <p>
-        <b>{title}</b>
+        <b data-testid="main-title">{title}</b>
       </p>
       <p>{description}</p>
     </div>

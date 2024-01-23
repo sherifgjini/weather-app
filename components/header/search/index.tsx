@@ -10,9 +10,9 @@ import Input from "@/components/input/index";
 import Styles from "./search.module.scss";
 import { getGeoLocation } from "@/services/getGeoLocation.service";
 import { IGeoLocation } from "@/interfaces/IGeoLocation";
+import Cities from "./cities";
 import dynamic from "next/dynamic";
 const Autocomplete = dynamic(() => import("./autocomplete"));
-const Cities = dynamic(() => import("./cities"));
 
 const Search: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");

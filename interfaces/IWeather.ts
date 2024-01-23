@@ -3,12 +3,7 @@ export interface IWeather {
     lon: number;
     lat: number;
   };
-  weather: {
-    id: number;
-    main: string;
-    description: string;
-    icon: string;
-  }[];
+  weather: weatherType;
   base: string;
   main: {
     temp: number;
@@ -45,6 +40,12 @@ export interface IWeather {
   name: string;
   cod: number;
 }
+export type weatherType = {
+  id: number;
+  main: string;
+  description: string;
+  icon: string;
+}[];
 
 export type IWeatherParams = {
   lat: number;
