@@ -9,7 +9,7 @@ const Cities = () => {
         Tokyo
       </Link>{" "}
       <Link data-testid="city-link" href={"/city/39.6852874_-93.9268836"}>
-        New York
+        NY
       </Link>
       <Link data-testid="city-link" href={"/city/46.9482713_7.4514512"}>
         Bern

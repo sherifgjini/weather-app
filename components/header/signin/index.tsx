@@ -21,7 +21,7 @@ const Login = () => {
   if (status === "unauthenticated") {
     return (
       <Button large onClick={() => signIn("google")}>
-        Sign in with Google
+        Sign in
       </Button>
     );
   }
