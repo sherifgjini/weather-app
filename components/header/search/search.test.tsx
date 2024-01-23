@@ -1,4 +1,10 @@
-import { screen, render, fireEvent, waitFor } from "@testing-library/react";
+import {
+  screen,
+  render,
+  fireEvent,
+  waitFor,
+  act,
+} from "@testing-library/react";
 import Search from "./index";
 import Cities from "./cities";
 
@@ -18,11 +24,15 @@ describe("Search Component", () => {
   test("renders correctly", async () => {
     render(<Search />);
     const inputElement = screen.getByPlaceholderText("Search City...");
-    expect(inputElement).toBeInTheDocument();
-    fireEvent.change(inputElement, {
-      target: { value: "Berlin" },
+
+    await act(async () => {
+      fireEvent.change(inputElement, {
+        target: { value: "Berlin" },
+      });
+      await waitFor(() => {
+        expect(inputElement).toHaveValue("Berlin");
+      });
     });
-    expect(inputElement).toHaveValue("Berlin");
   });
 
   test("render cities correctly", () => {
