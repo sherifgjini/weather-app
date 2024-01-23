@@ -1,5 +1,7 @@
 # Weather App
 
+https://weather-app-seven-psi-36.vercel.app/
+
 ## Introduction
 
 This project is built with Next.js version 14.2.
@@ -43,9 +45,7 @@ Weather data are stored in Redux and shared across components for efficient stat
 
 ## Contributors
 
-- [Your Name]
-- [Contributor 1]
-- [Contributor 2]
+- Sherif Gjini
 
 ## License
 
