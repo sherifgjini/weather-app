@@ -1,3 +1,4 @@
+import Forecast from "@/components/forecast/foreCast";
 import WeatherWrapper from "@/components/weatherBox/WeatherWrapper";
 import WeatherBox from "@/components/weatherBox/weatherBox";
 import { getCurrentWeather } from "@/services/getCurrentWeather.service";
@@ -10,7 +11,9 @@ type Params = {
 };
 
 export async function generateMetadata({ params }: Params) {
-  return { title: `Post: ${params.slug}` };
+  const latLon = params.slug.split("_");
+  const city = await getCurrentWeather({ lat: +latLon[0], lon: +latLon[1] });
+  return { title: `Weather in ${city.name}` };
 }
 
 export default async function Page({ params }: Params) {
@@ -29,6 +32,7 @@ export default async function Page({ params }: Params) {
           <WeatherBox />
         </WeatherWrapper>
       </Suspense>
+      <Forecast coords={{ latitude: +latLon[0], longitude: +latLon[1] }} />
     </div>
   );
 }

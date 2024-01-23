@@ -18,7 +18,7 @@ const User: React.FC<UserProps> = ({ image, name, signOut, email }) => {
         iniciator={
           <div className={Styles.user}>
             <img className={Styles.avatar} src={image} alt="Profile picture" />
-            {name}
+            <span>{name}</span>
             <ArrowDown />
           </div>
         }

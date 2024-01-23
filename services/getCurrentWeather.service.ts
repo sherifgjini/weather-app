@@ -7,7 +7,8 @@ export const getCurrentWeather = async (
   const data = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}data/2.5/weather${serialize(
       params
-    )}&appid=${process.env.NEXT_PUBLIC_API_KEY}`
+    )}&appid=${process.env.NEXT_PUBLIC_API_KEY}`,
+    { cache: "no-store" }
   );
   return await data.json();
 };

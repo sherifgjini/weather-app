@@ -1,6 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type Coords = Pick<GeolocationPosition["coords"], "latitude" | "longitude">;
+export type Coords = Pick<
+  GeolocationPosition["coords"],
+  "latitude" | "longitude"
+>;
 
 type InitialStateType = {
   value: Coords | null;

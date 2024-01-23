@@ -41,7 +41,7 @@ const Home = () => {
       ) : (
         <p>No weather data available</p>
       )}
-      <Forecast lat={coords?.latitude} lon={coords?.longitude} />
+      <Forecast coords={coords} />
     </div>
   );
 };
