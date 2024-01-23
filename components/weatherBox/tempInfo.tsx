@@ -15,7 +15,7 @@ const TempInfo: React.FC<ITempInfoProps> = ({ main, weather }) => {
   return (
     <div>
       <p>
-        <b data-testid="main-temp">{main?.temp}°C</b>
+        <b data-testid="main-temp">{Math.round(main?.temp)}°C</b>
       </p>
       <p>
         <b data-testid="main-title">{title}</b>
