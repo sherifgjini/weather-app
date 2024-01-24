@@ -25,13 +25,12 @@ describe("Search Component", () => {
     render(<Search />);
     const inputElement = screen.getByPlaceholderText("Search City...");
 
-    await act(async () => {
-      fireEvent.change(inputElement, {
-        target: { value: "Berlin" },
-      });
-      await waitFor(() => {
-        expect(inputElement).toHaveValue("Berlin");
-      });
+    fireEvent.change(inputElement, {
+      target: { value: "Berlin" },
+    });
+
+    await waitFor(() => {
+      expect(inputElement).toHaveValue("Berlin");
     });
   });
 

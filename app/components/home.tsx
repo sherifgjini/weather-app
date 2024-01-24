@@ -1,5 +1,5 @@
 "use client";
-import Forecast from "@/components/forecast/foreCast";
+import Forecast from "@/components/forecast";
 import {
   setError,
   setLoading,
@@ -10,8 +10,8 @@ import { getCurrentWeather } from "@/services/getCurrentWeather.service";
 import dynamic from "next/dynamic";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-const WeatherBox = dynamic(() => import("@/components/weatherBox/weatherBox"), {
-  loading: () => <span className="weatherBoxSkeleton">Loading...</span>,
+const WeatherBox = dynamic(() => import("@/components/weatherBox"), {
+  loading: () => <span className="boxSkeleton">Loading...</span>,
 });
 
 const Home = () => {
@@ -35,7 +35,7 @@ const Home = () => {
   return (
     <div>
       {loading ? (
-        <span className="weatherBoxSkeleton">Loading...</span>
+        <span className="boxSkeleton">Loading...</span>
       ) : data ? (
         <WeatherBox />
       ) : (

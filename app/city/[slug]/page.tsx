@@ -1,6 +1,6 @@
-import Forecast from "@/components/forecast/foreCast";
+import Forecast from "@/components/forecast";
 import WeatherWrapper from "@/components/weatherBox/WeatherWrapper";
-import WeatherBox from "@/components/weatherBox/weatherBox";
+import WeatherBox from "@/components/weatherBox";
 import { getCurrentWeather } from "@/services/getCurrentWeather.service";
 import { Suspense } from "react";
 
@@ -25,9 +25,7 @@ export default async function Page({ params }: Params) {
   });
   return (
     <div>
-      <Suspense
-        fallback={<span className="weatherBoxSkeleton">Loading...</span>}
-      >
+      <Suspense fallback={<span className="boxSkeleton">Loading...</span>}>
         <WeatherWrapper data={data}>
           <WeatherBox />
         </WeatherWrapper>
