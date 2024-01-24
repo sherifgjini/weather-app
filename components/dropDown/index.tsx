@@ -1,5 +1,5 @@
 import React, { useState, ReactNode } from "react";
-import styles from "./dropdown.module.scss";
+import Styles from "./dropdown.module.scss";
 
 interface DropdownProps {
   children: ReactNode;
@@ -13,14 +13,14 @@ const Dropdown: React.FC<DropdownProps> = ({ children, iniciator }) => {
     setIsOpen(!isOpen);
   };
 
-  const isOpenClass = isOpen ? styles.open : "";
+  const isOpenClass = isOpen ? Styles.open : "";
 
   return (
-    <div className={`${styles.dropdown} ${isOpenClass}`}>
-      <div className={styles.toggleButton} onClick={handleToggle}>
+    <div className={`${Styles.dropdown} ${isOpenClass}`}>
+      <div className={Styles.toggleButton} onClick={handleToggle}>
         {iniciator}
       </div>
-      <div className={styles.dropdownContent}>{children}</div>
+      <div className={Styles.dropdownContent}>{children}</div>
     </div>
   );
 };

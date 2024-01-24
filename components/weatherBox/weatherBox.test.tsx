@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { makeStore, AppStore } from "@/redux/store";
-import WeatherBox from "./weatherBox";
+import WeatherBox from ".";
 import TempInfo from "./tempInfo";
 import { IWeather } from "@/interfaces/IWeather";
 import MainInfo from "./mainInfo";

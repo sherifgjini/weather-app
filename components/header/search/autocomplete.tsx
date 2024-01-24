@@ -2,25 +2,31 @@
 import { IGeoLocation } from "@/interfaces/IGeoLocation";
 import Styles from "./search.module.scss";
 import { useRouter } from "next/navigation";
+import { useCallback } from "react";
 
 interface AutocompleteProps {
   loading: boolean;
   data: IGeoLocation[];
   setAutocompleteData: React.Dispatch<React.SetStateAction<IGeoLocation[]>>;
 }
+
 const Autocomplete: React.FC<AutocompleteProps> = ({
   loading,
   data,
   setAutocompleteData,
 }) => {
   const router = useRouter();
-  const changeRoute = (lat: number, lon: number) => {
-    router.push(`/city/${lat}_${lon}`);
-    setAutocompleteData([]);
-  };
+
+  const changeRoute = useCallback(
+    (lat: number, lon: number) => {
+      router.push(`/city/${lat}_${lon}`);
+      setAutocompleteData([]);
+    },
+    [router, setAutocompleteData]
+  );
+
   return (
     <ul data-testid="autocomplete" className={Styles.autocomplete}>
-      {loading && <div data-testid="loading">Loading...</div>}
       {!loading &&
         data.map((city) => (
           <li

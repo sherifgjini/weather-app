@@ -9,7 +9,7 @@ ul {
   margin: 0;
 }
 body {
-  background-image: url("./public//cloud.jpg");
+  background-image: url("../public//cloud.jpg");
   background-attachment: fixed;
   background-position: center 20%;
   background-repeat: no-repeat;
@@ -37,7 +37,7 @@ li {
   backdrop-filter: blur(18px);
 }
 
-.weatherBoxSkeleton {
+.boxSkeleton {
   max-width: 700px;
   width: 100%;
   border-radius: 20px;

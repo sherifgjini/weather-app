@@ -1,5 +1,5 @@
 import StoreProvider from "@/redux/provider";
-import "../index.scss";
+import "../styles/index.scss";
 import GetGeoLocation from "@/components/getGeoLocation";
 import Header from "@/components/header";
 
