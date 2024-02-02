@@ -9,6 +9,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env: 
+      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+      NEXT_AUTH_SECRET: ${{ secrets.NEXT_AUTH_SECRET }}
+      NEXT_AUTH_URL: ${{ secrets.NEXT_AUTH_URL }}
+      NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+      NEXT_PUBLIC_API_KEY: ${{ secrets.NEXT_PUBLIC_API_KEY }}
+      NEXT_PUBLIC_API_ICON_URL: ${{ secrets.NEXT_PUBLIC_API_ICON_URL }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
